@@ -20,7 +20,7 @@ class _NombreScreenState extends State<NombreScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Memory Game',
+              'Memory image',
               style: TextStyle(fontSize: 30), // Cambiar el tamaño del texto
             ),
             SizedBox(height: 400), // Aumentar el espacio vertical
