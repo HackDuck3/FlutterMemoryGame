@@ -1,20 +1,20 @@
 
 class Puntuacion {
-  String nombre;
+  String name;
   int puntaje;
 
   Puntuacion({
-    required this.nombre,
+    required this.name,
     required this.puntaje,
   });
 
   Map<String, dynamic> toJson() => {
-    'nombre': nombre,
+    'name': name,
     'puntaje': puntaje,
   };
 
   factory Puntuacion.fromJson(Map<String, dynamic> json) => Puntuacion(
-    nombre: json['nombre'],
+    name: json['name'],
     puntaje: json['puntaje'],
   );
 }

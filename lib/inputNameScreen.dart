@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'show_images_screen.dart';
+import 'showImageScreen.dart';
 
 class NombreScreen extends StatefulWidget {
   const NombreScreen({Key? key}) : super(key: key);
@@ -41,7 +41,7 @@ class _NombreScreenState extends State<NombreScreen> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ShowImagesScreen(nombre: nombre),
+                    builder: (context) => ShowImagesScreen(name: nombre),
                   ),
                 );
               },

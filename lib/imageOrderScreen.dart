@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Puntuacion.dart';
-import 'package:flutter_application_1/PuntuacionesGuardadasScreen.dart';
+import 'package:flutter_application_1/scores.dart';
+import 'package:flutter_application_1/rankingScreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
 class OrdenarImagenesScreen extends StatefulWidget {
-  final String nombre;
+  final String name;
   final List<String> secuencia;
 
   const OrdenarImagenesScreen({
     Key? key,
-    required this.nombre,
+    required this.name,
     required this.secuencia,
     required List imagenesFijas,
   }) : super(key: key);
@@ -157,7 +157,7 @@ class _OrdenarImagenesScreenState extends State<OrdenarImagenesScreen> {
 
                 // SE CREA Y SE GUARDA UNA PUNTUACION
                 Puntuacion puntuacionActual =
-                    Puntuacion(nombre: widget.nombre, puntaje: puntaje);
+                    Puntuacion(name: widget.name, puntaje: puntaje);
                 guardarPuntuacion(puntuacionActual);
 
                 // Navegar a la pantalla de puntuación
@@ -165,7 +165,7 @@ class _OrdenarImagenesScreenState extends State<OrdenarImagenesScreen> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => PuntuacionScreen(
-                        nombre: widget.nombre, puntaje: puntaje),
+                        name: widget.name, puntaje: puntaje),
                   ),
                 );
               },
@@ -188,11 +188,11 @@ class _OrdenarImagenesScreenState extends State<OrdenarImagenesScreen> {
 }
 
 class PuntuacionScreen extends StatelessWidget {
-  final String nombre;
+  final String name;
   final int puntaje;
 
   const PuntuacionScreen(
-      {Key? key, required this.nombre, required this.puntaje})
+      {Key? key, required this.name, required this.puntaje})
       : super(key: key);
 
   @override
@@ -207,7 +207,7 @@ class PuntuacionScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              '$nombre, tu puntuación total es: $puntaje',
+              '$name, tu puntuación total es: $puntaje',
               style: const TextStyle(fontSize: 20),
             ),
             const SizedBox(

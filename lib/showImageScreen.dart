@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'ordenar_imagenes_screen.dart'; // Importa la pantalla de ordenar imágenes
+import 'imageOrderScreen.dart'; // Importa la pantalla de ordenar imágenes
 
 class ShowImagesScreen extends StatefulWidget {
-  final String nombre;
+  final String name;
 
-  const ShowImagesScreen({Key? key, required this.nombre}) : super(key: key);
+  const ShowImagesScreen({Key? key, required this.name}) : super(key: key);
 
   @override
   _ShowImagesScreenState createState() => _ShowImagesScreenState();
@@ -45,7 +45,7 @@ class _ShowImagesScreenState extends State<ShowImagesScreen> {
             context,
             MaterialPageRoute(
               builder: (context) => OrdenarImagenesScreen(
-                nombre: widget.nombre,
+                name: widget.name,
                 secuencia: imagenes,
                 imagenesFijas: const [],
               ),

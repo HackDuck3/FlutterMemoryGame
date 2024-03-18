@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:supabase/supabase.dart';
-import 'package:flutter_application_1/Puntuacion.dart';
+import 'package:flutter_application_1/scores.dart';
 
 class PuntuacionesGuardadasScreen extends StatefulWidget {
   const PuntuacionesGuardadasScreen({Key? key}) : super(key: key);
@@ -33,7 +33,7 @@ class _PuntuacionesGuardadasScreenState
     final List<dynamic> data = response;
     List<Puntuacion> puntuaciones = data
         .map((item) => Puntuacion(
-              nombre: item['user_name'] as String,
+              name: item['user_name'] as String,
               puntaje: item['user_point'] as int,
             ))
         .toList();
@@ -58,7 +58,7 @@ class _PuntuacionesGuardadasScreenState
         itemCount: puntuacionesGuardadas.length,
         itemBuilder: (context, index) {
           final puntuacion = puntuacionesGuardadas[index];
-          final nombre = puntuacion.nombre;
+          final name = puntuacion.name;
           final puntaje = puntuacion.puntaje;
 
           return Card(
@@ -72,7 +72,7 @@ class _PuntuacionesGuardadasScreenState
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    nombre,
+                    name,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16.0,

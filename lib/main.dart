@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'nombre_screen.dart';
+import 'inputNameScreen.dart';
 
 void main() {
   runApp(const MainApp());
